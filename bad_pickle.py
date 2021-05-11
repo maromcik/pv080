@@ -1,8 +1,9 @@
 # contains bunch of buggy examples
-# taken from https://hackernoon.com/10-common-security-gotchas-in-python-and-how-to-avoid-them-e19fbe265e03
-import cPickle
-import subprocess
+# taken from https://hackernoon.com/10-common-security-
+# gotchas-in-python-and-how-to-avoid-them-e19fbe265e03
 import base64
+import pickle
+import subprocess
 
 
 # Input injection
@@ -18,7 +19,7 @@ def abc(request, user):
 
 
 # Pickles
-class RunBinSh(object):
+class RunBinSh():
     def __reduce__(self):
         return (subprocess.Popen, (('/bin/sh',),))
 
